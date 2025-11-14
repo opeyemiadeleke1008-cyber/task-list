@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-teal-50">
+    <section
+      class="sm:w-140 bg-white shadow-lg justify-self-center mt-20 py-4 rounded-2xl items-start px-4"
+    >
+      <div class="flex justify-between">
+        <h2 class="sm:text-3xl text-xl">Tasks list</h2>
+        <div class="sm:flex gap-4 items-center hidden">
+          <p
+            class="py-2 rounded-xl bg-purple-700 text-white px-2 text-center content-center cursor-pointer"
+          >
+            <i class="fas fa-clock"></i><span>Urgent</span>
+          </p>
+          <p class="cursor-pointer shadow-lg>
+            <i class="fa fa-bars aria-hidden="true"></i><span>Latest</span>
+          </p>
+        </div>
+        <div class="flex sm:hidden gap-4">
+          <p class="rounded-xl bg-purple-500 px-2"><i class="fas fa-clock"></i></p>
+          <p><i class="fa fa-bars" aria-hidden="true"></i></p>
+        </div>
+      </div>
+      <p>Hello, here are your latest tasks</p>
+      <br />
+      <div class="text-gray-500">
+        <div
+          class="flex justify-between items-center border-b border-gray-100 py-4 px-4"
+        >
+          <p>
+            <i class="fa fa-check" aria-hidden="true"></i
+            ><span class="line-through">YT intro remix</span>
+          </p>
+          <p class="cursor-pointer"><i class="fa fa-trash" aria-hidden="true"></i></p>
+        </div>
+        <div
+          class="flex justify-between py-4 items-center border-b border-gray-100 px-4"
+        >
+          <p>
+            <i class="fa fa-check" aria-hidden="true"></i
+            ><span class="line-through">Do the homework</span>
+          </p>
+          <p class="cursor-pointer"><i class="fa fa-trash" aria-hidden="true"></i></p>
+        </div>
+        <div
+          class="flex justify-between py-4 items-center border-b border-gray-100 px-4 hover:bg-blue-50"
+        >
+          <p>
+            <i class="fa fa-check-circle" aria-hidden="true"></i
+            ><span>Magic stuff</span>
+          </p>
+          <p class="cursor-pointer"><i class="fa fa-trash" aria-hidden="true"></i></p>
+        </div>
+        <div
+          class="flex justify-between py-4 bg-linear-to-r from-blue-200 to-white items-center border-b border-gray-100 px-4 hover:bg-blue-50"
+        >
+          <p>
+            <i class="fa fa-check-circle" aria-hidden="true"></i
+            ><span>Magic stuff 2.0</span>
+          </p>
+          <p class="cursor-pointer"><i class="fa fa-trash" aria-hidden="true"></i></p>
+        </div>
+        <div
+          class="flex justify-between py-4 items-center border-b border-gray-100 px-4 hover:bg-blue-50"
+        >
+          <p>
+            <i class="fa fa-check-circle" aria-hidden="true"></i
+            ><span>Magic stuff</span>
+          </p>
+          <p class="cursor-pointer"><i class="fa fa-trash" aria-hidden="true"></i></p>
+        </div>
+      </div>
+      <p class="text-center py-4">Last updated 12 minutes ago</p>
+    </section>
+  </body>
+</html>
