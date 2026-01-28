@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-teal-50">
+    <section
+      class="md:w-[45%] w-[95%] bg-white shadow-lg justify-self-center mt-20 py-4 rounded-2xl items-start px-4"
+    >
+      <div class="flex justify-between">
+        <h2 class="sm:text-3xl text-xl">Tasks list</h2>
+        <div class="sm:flex gap-4 items-center hidden cursor-pointer">
+        <button id="add-task" class="bg-blue-400 py-[5px] px-[10px] rounded-lg cursor-pointer text-white font-semibold"><i class="fa fa-plus"></i> Add task</button>
+        </div>
+      </div>
+        <p class="text-gray-600">Hello, here are your latest tasks</p>
+        <div class="relative hidden" id="task-input-container">
+            <textarea id="new-task" placeholder="Add a new task..." class="mt-4 w-full border border-gray-300 rounded-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+            <br>
+            <button id="add-task-btn" class="mt-2 bg-blue-400 py-[5px] px-[10px] rounded-lg cursor-pointer text-white font-semibold">Add task</button>
+        </div>
+        <ul id="task-list" class="mt-4">
+            <!-- Tasks will be added here dynamically -->
+
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('add-task').addEventListener('click', () => {
+            const taskInputContainer = document.getElementById('task-input-container');
+            taskInputContainer.classList.toggle('hidden');
+        });
+        document.getElementById('add-task-btn').addEventListener('click', () => {
+            const taskList = document.getElementById('task-list');
+            const newTaskInput = document.getElementById('new-task');
+            const taskText = newTaskInput.value.trim();
+            if (taskText !== '') {
+                const li = document.createElement('li');
+                li.className = "flex justify-between items-center border-b border-gray-200 py-4 px-4 hover:bg-blue-50";
+                li.innerHTML = `
+                    <p>
+                        <span>${taskText}</span>
+                    </p>
+                    <div class="flex items-center">
+                    <p class="cursor-pointer delete-task"><i class="fa fa-trash" aria-hidden="true"></i></p>
+                    <input type= "checkbox" class="ml-4"/>
+                    </div>
+                `;
+                taskList.appendChild(li);
+                document.getElementById('task-input-container').classList.add('hidden');
+                newTaskInput.value = '';
+
+                li.querySelector('.delete-task').addEventListener('click', () => {
+                    taskList.removeChild(li);
+                });
+                li.querySelector('input[type="checkbox"]').addEventListener('click', ()=> {
+                    const span = li.querySelector('p span');
+                    if (span.classList.contains('line-through', 'text-gray-500')) {
+                        span.classList.remove('line-through', 'text-gray-500');
+                    } else {
+                        span.classList.add('line-through', 'text-gray-500');
+                    }
+                })
+            }
+        });
+    </script>
+  </body>
+</html>
+  
